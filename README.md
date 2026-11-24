@@ -6,13 +6,18 @@ An end-to-end unsupervised machine learning pipeline that segments retail custom
 
 ---
 
-## Key Results
+## Results
 
-- Identified **distinct customer segments** with interpretable business characteristics
-- Benchmarked 3 clustering algorithms across 3 evaluation metrics
-- Validated segment robustness using supervised learning classification
-- Produced **16+ visualizations** documenting the full analytical pipeline
-- Actionable insights for targeted marketing and customer retention strategies
+All numbers are from `report.pdf`.
+
+| Step | Result |
+|---|---|
+| Cleaning | 541,909 raw transactions reduced to 358,580; 4,306 customers retained |
+| Features | 8 RFM and behavioural features per customer |
+| PCA | 4 components explain 93.59% of total variance |
+| Model selected | K-Means with k = 3 (highest Calinski-Harabasz index, 2,790.7, and balanced cluster sizes) |
+| DBSCAN | Silhouette 0.449 on non-noise points, but clusters of 62.2%, 35.4% and 0.1% of customers |
+| Validation | Logistic regression predicting the segment label: 99.65% test accuracy (862 held-out customers); 99.45% ± 0.34% in 5-fold cross-validation |
 
 ---
 
@@ -68,7 +73,7 @@ An end-to-end unsupervised machine learning pipeline that segments retail custom
 ## Setup
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn scipy
+pip install -r requirements.txt
 ```
 
 Download the dataset from the [UCI repository](https://archive.ics.uci.edu/ml/datasets/Online+Retail), place it in the project root, then open `customer segementation.ipynb` in Jupyter or Google Colab.
@@ -93,4 +98,4 @@ Download the dataset from the [UCI repository](https://archive.ics.uci.edu/ml/da
 
 ## Author
 
-**Arvinder Mundra** · [Portfolio](https://arvindermundraa.github.io/ArvinderMundra/) · [LinkedIn](https://www.linkedin.com/in/arvinder-mundraa) · [GitHub](https://github.com/arvindermundra1208)
+**Arvinder Mundra** · [Portfolio](https://portfolio-react-theta-gules.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/arvinder-mundraa) · [GitHub](https://github.com/arvindermundraa)
